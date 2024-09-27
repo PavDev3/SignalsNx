@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@signals-nx/shared-ui-components": [
+        "libs/shared/ui/components/src/index.ts"
+      ],
+      "@signals-nx/shared-ui-components-ui-sidemenu": [
+        "libs/shared/ui/components/ui-sidemenu/src/index.ts"
+      ],
+      "@signals-nx/signals-feature": ["signals/feature/src/index.ts"],
+      "@signals-nx/signalsnx-feature-shell": [
+        "libs/signalsnx/feature-shell/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
