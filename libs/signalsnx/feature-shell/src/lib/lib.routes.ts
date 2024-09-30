@@ -2,8 +2,9 @@ import { type Route } from '@angular/router';
 import { SignalsnxFeatureShellComponent } from './signalsnx-feature-shell/signalsnx-feature-shell.component';
 
 const children: Route[] = [
+  { path: '', redirectTo: 'counter', pathMatch: 'full' },
   {
-    path: '',
+    path: 'counter',
     loadChildren: () =>
       import('@signals-nx/signalsnx-feature-counter').then(
         (m) => m.signalsnxFeatureCounterRoutes

@@ -7,6 +7,7 @@ interface MenuItem {
   route: string;
 }
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'ui-side-menu',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
@@ -19,7 +20,11 @@ interface MenuItem {
         routerLinkActive="active"
       >
         @for (item of menuItem; track $index) {
-        <li class="list-group-item">
+        <li
+          class="list-group-item"
+          [routerLink]="[item.route]"
+          routerLinkActive="active"
+        >
           {{ item.title }}
         </li>
         }
