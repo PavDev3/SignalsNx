@@ -1,0 +1,20 @@
+{
+  "name": "signalsnx-feature-user-info",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/signalsnx/feature-user-info/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:signalsnx", "type:feature"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/signalsnx/feature-user-info/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

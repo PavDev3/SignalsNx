@@ -1,0 +1,20 @@
+{
+  "name": "signalsnx-feature-counter",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/signalsnx/feature-counter/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:signalsnx", "type:feature"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/signalsnx/feature-counter/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

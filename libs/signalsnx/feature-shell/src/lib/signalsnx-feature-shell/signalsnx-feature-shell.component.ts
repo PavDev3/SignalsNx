@@ -11,11 +11,22 @@ import { SideMenuComponent } from './../../../../../shared/ui/components/ui-side
   selector: 'lib-signalsnx-feature-shell',
   standalone: true,
   imports: [CommonModule, RouterOutlet, SideMenuComponent],
-  template: ` <div class="flex flex-1 items-center justify-center p-6">
-    <h1 class="text-3xl font-bold underline text-center">Welcome to Singlas</h1>
-    <ui-side-menu />
-    <router-outlet />
-  </div>`,
+  template: `
+    <div class="flex flex-col h-screen">
+      <div class="items-center justify-center p-6">
+        <h1 class="text-3xl font-bold underline text-center">
+          Welcome to Singlas
+        </h1>
+      </div>
+      <div class="flex flex-1">
+        <ui-side-menu></ui-side-menu>
+
+        <div class="flex-1 p-6">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  `,
   styles: ``,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

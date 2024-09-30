@@ -22,8 +22,17 @@
         "libs/shared/ui/components/ui-sidemenu/src/index.ts"
       ],
       "@signals-nx/signals-feature": ["signals/feature/src/index.ts"],
+      "@signals-nx/signalsnx-feature-counter": [
+        "libs/signalsnx/feature-counter/src/index.ts"
+      ],
+      "@signals-nx/signalsnx-feature-properties": [
+        "libs/signalsnx/feature-properties/src/index.ts"
+      ],
       "@signals-nx/signalsnx-feature-shell": [
         "libs/signalsnx/feature-shell/src/index.ts"
+      ],
+      "@signals-nx/signalsnx-feature-user-info": [
+        "libs/signalsnx/feature-user-info/src/index.ts"
       ]
     }
   },
