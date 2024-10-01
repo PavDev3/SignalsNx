@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface MenuItem {
@@ -16,10 +16,10 @@ interface MenuItem {
     <div class="flex flex-col text-center">
       <ul
         class="list-group"
-        [routerLink]="[menuItem]"
+        [routerLink]="[menuItems()]"
         routerLinkActive="active"
       >
-        @for (item of menuItem; track $index) {
+        @for (item of menuItems(); track $index) {
         <li
           class="list-group-item"
           [routerLink]="[item.route]"
@@ -31,11 +31,16 @@ interface MenuItem {
       </ul>
     </div>
   `,
+  styles: `
+  li {
+    cursor: pointer;
+  }
+  `,
 })
-export class SideMenuComponent {
-  menuItem: MenuItem[] = [
+export class MenuComponent {
+  public menuItems = signal<MenuItem[]>([
     { title: 'Contador', route: '/counter' },
     { title: 'Usuario', route: '/user-info' },
     { title: 'Propiedades', route: '/properties' },
-  ];
+  ]);
 }

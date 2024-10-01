@@ -1,1 +1,1 @@
-export * from './src/side-menu.component';
+export * from './src/menu.component';

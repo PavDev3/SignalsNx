@@ -33,6 +33,12 @@
       ],
       "@signals-nx/signalsnx-feature-user-info": [
         "libs/signalsnx/feature-user-info/src/index.ts"
+      ],
+      "@signals-nx/userService": [
+        "libs/shared/data-access/user-service/src/index.ts"
+      ],
+      "@signals-nx/userService/mocks": [
+        "libs/shared/data-access/user-service/mocks/src/index.ts"
       ]
     }
   },

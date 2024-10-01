@@ -5,12 +5,12 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SideMenuComponent } from './../../../../../shared/ui/components/ui-sidemenu/src/side-menu.component';
+import { MenuComponent } from './../../../../../shared/ui/components/ui-sidemenu/src/menu.component';
 
 @Component({
   selector: 'lib-signalsnx-feature-shell',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SideMenuComponent],
+  imports: [CommonModule, RouterOutlet, MenuComponent],
   template: `
     <div class="flex flex-col h-screen">
       <div class="items-center justify-center p-6">
