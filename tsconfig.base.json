@@ -19,7 +19,7 @@
         "libs/shared/ui/components/src/index.ts"
       ],
       "@signals-nx/shared-ui-components-ui-sidemenu": [
-        "libs/shared/ui/components/ui-sidemenu/src/index.ts"
+        "libs/shared/ui/components/ui-sidemenu/index.ts"
       ],
       "@signals-nx/signals-feature": ["signals/feature/src/index.ts"],
       "@signals-nx/signalsnx-feature-counter": [

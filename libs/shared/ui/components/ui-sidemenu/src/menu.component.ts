@@ -14,11 +14,7 @@ interface MenuItem {
   template: `
     <h3 class="text-3xl font-bold  text-center">Menu</h3>
     <div class="flex flex-col text-center">
-      <ul
-        class="list-group"
-        [routerLink]="[menuItems()]"
-        routerLinkActive="active"
-      >
+      <ul class="list-group">
         @for (item of menuItems(); track $index) {
         <li
           class="list-group-item"
@@ -39,8 +35,8 @@ interface MenuItem {
 })
 export class MenuComponent {
   public menuItems = signal<MenuItem[]>([
-    { title: 'Contador', route: '/counter' },
-    { title: 'Usuario', route: '/user-info' },
-    { title: 'Propiedades', route: '/properties' },
+    { title: 'Contador', route: 'counter' },
+    { title: 'Usuario', route: 'user-info' },
+    { title: 'Propiedades', route: 'properties' },
   ]);
 }

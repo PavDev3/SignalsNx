@@ -5,8 +5,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MenuComponent } from './../../../../../shared/ui/components/ui-sidemenu/src/menu.component';
-
+import { MenuComponent } from '@signals-nx/shared-ui-components-ui-sidemenu';
 @Component({
   selector: 'lib-signalsnx-feature-shell',
   standalone: true,

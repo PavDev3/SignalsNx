@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   OnInit,
   signal,
@@ -27,13 +28,15 @@ import { User, UserServiceApi } from '@signals-nx/userService';
         </button>
       </div>
       <div class="col-8">
-        @if (currentUser()) {
-        <h3>Usuario</h3>
-        <p>Nombre: {{ currentUser()!.first_name }}</p>
+        @if (!currentUser()) {
+        <h3>Usuario no encontrado</h3>
+
+        } @else {
+        <h3 class="text-center">Usuario</h3>
+        <p>Nombre: {{ fullName() }}</p>
         <p>Correo: {{ currentUser()!.email }}</p>
         <img [src]="currentUser()!.avatar" alt="avatar" class="rounded" />
-        } @else {
-        <h3>Usuario no encontrado</h3>
+
         }
       </div>
     </div>
@@ -48,6 +51,10 @@ export class SignalsnxFeatureUserInfoComponent implements OnInit {
   }
   readonly userService = inject(UserServiceApi);
   public userId = signal(1);
+  public fullName = computed<string>(() => {
+    if (!this.currentUser()) return 'Usuario no encontrado';
+    return `${this.currentUser()?.first_name} ${this.currentUser()?.last_name}`;
+  });
 
   public currentUser = signal<User | undefined>(undefined);
   public userWasFound = signal(true);
@@ -56,9 +63,15 @@ export class SignalsnxFeatureUserInfoComponent implements OnInit {
     if (id <= 0) return; // No se puede cargar un usuario con id <= 0
     this.userId.set(id);
 
-    this.userService.getUsersById(id).subscribe((user) => {
-      this.currentUser.set(user);
-      this.userWasFound.set(true);
+    this.userService.getUsersById(id).subscribe({
+      next: (user) => {
+        this.currentUser.set(user);
+        this.userWasFound.set(true);
+      },
+      error: () => {
+        this.userWasFound.set(false);
+        this.currentUser.set(undefined);
+      },
     });
   }
 }
